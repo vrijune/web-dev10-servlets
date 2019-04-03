@@ -24,7 +24,7 @@ The `exercise01.jsp` file is setup to display specific `request attributes`; hav
 Follow these steps to complete the task:
 + Create an html file called `exercise01.html` inside the `web` folder
 + In `exercise01.html`, create a form that will allow the user to enter the first name, last name, age, place of birth and biography for an author.
-+ Create a servlet (a class that extends HttpServlet) in the `exercise01` package that will be able to process the form data; have a look at `Example01`
++ Create a servlet (a class that extends HttpServlet) in a new `exercise01` package that will be able to process the form data; have a look at `Example01`
 + Complete the `web.xml` file so that it maps a url for the `Exercise01` servlet to the servlet class; look carefully at how `example01` is mapped in the `web.xml` file
 + Modify the action attribute on the form in `exercise01.html` so it will link to the Servlet; this will mean making it link to the url mapping you created in the previous step
 + Inside the servlet you created:
