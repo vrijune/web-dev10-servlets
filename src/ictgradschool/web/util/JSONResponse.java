@@ -12,6 +12,7 @@ public class JSONResponse {
         response.setCharacterEncoding("UTF-8");
 
         ObjectMapper objectMapper = new ObjectMapper();
+
         objectMapper.writeValue(response.getWriter(), object);
     }
 }

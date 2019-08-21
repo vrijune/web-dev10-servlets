@@ -62,7 +62,7 @@ In this exercise you will create an AJAX endpoint that will supply a front-end A
 
 There are some files you will use for this that are already complete. These are in the `util` folder.
 
-The files that will be used but NOT need to modify from the `util` folder are:
+The files that will be used but NOT need to be modified from the `util` folder are:
 + `Article` - a class for an Article object that can represent information from the articles data
 + `ArticleListGenerator` - a class with a single static method called `getArticleList()` that will return a list of articles 
     -  The`getArticleList()` method accesses a `.json` file that it uses to generate the `.json`. Normally you would access a database and NOT a server-side `.json` file but we are not using a database or database connection in this lab.
@@ -85,7 +85,7 @@ Steps for creating the endpoint:
     
 Now create a `.html` file with a fetch request and use it to display all of the titles and contents of the articles. If you have trouble working this out
 you may need to revise Lab 09. Hint: when you are making a request to a servlet that is on the same server as the page you are on you only need
-to give the relative path for the servlet. Look in the web-xml file to find the relative path for the Exercise03 servlet. 
+to give the relative path for the servlet. Look in the web-xml file to find the relative path for the Exercise03 servlet; it is referenced in the URL pattern. 
 
 The finished `.html` page should look something like this:
 
