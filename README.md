@@ -65,25 +65,27 @@ There are some files you will use for this that are already complete. These are 
 The files that will be used but NOT need to modify from the `util` folder are:
 + `Article` - a class for an Article object that can represent information from the articles data
 + `ArticleListGenerator` - a class with a single static method called `getArticleList()` that will return a list of articles 
-    -  The`getArticleList()` method accesses a `.json` file that it uses to generate the `.json`. Normally you would access a database and NOT a server-side `.json` file but we are not using a database of database connection in this lab.
-+ `JSONResponse` - this is a class with a single static method that takes a response object and a object that implements the JSONAware interface as arguments; the JSONAware interface requires the object to have a `toJSONString()` method.
+    -  The`getArticleList()` method accesses a `.json` file that it uses to generate the `.json`. Normally you would access a database and NOT a server-side `.json` file but we are not using a database or database connection in this lab.
++ `JSONResponse` - this is a class with a single static method that takes a response object and a JSON object as arguments and then sends the response.
 
 Have a look at the contents of these files so you have some idea how you can use them.
 
-In the next steps you will create an endpoint and an html file that will use that endpoint to display the articles with a frontend AJAX request. 
+In the next steps you will create an endpoint and an html file that will use that endpoint to display the articles with a frontend AJAX request. This will involve 
+using a fetch request with an async function and await. Just like you have been doing with the `sporadic.nz` endpoints.
 
 The endpoint will be a servlet that will retrieve and convert a list of `Article` Java objects and convert it into a JSON array then use the `JSONResponse` class to complete the response.  
 
 Steps for creating the endpoint: 
 + In the `Exercise03` class, create a doGet method; this will be similar to the other servlets you have created already in this lab
 + Inside the doGet method, you will need to:
-    - Create a list of article objects
+    - Create a list of article objects through using the ArticleListGenerator class
     - Create a new empty JSON array
-    - Then for each article in the list of articles, use the static `toJson(...)` method to add the article to the JSON array
-    - Now use the `JSONResponse.send(...)` method (with appropriate arguments) to complete the endpoint; if you use the method correctly it should complete the response. You should not need to modify the `JSONResponse` class
+    - Now use the `JSONResponse.send(...)` method (with appropriate arguments) to complete the endpoint; if you use the method correctly it should complete the response. You should not need to modify the `JSONResponse` class.
+    The arguments for the JSONResponse.send() method should be the HTTPServletResponse object and the list of articles ( `List<Article>` )
     
-Now create a `.html` file with a XMLHttpRequest object and use it to display all of the titles and contents of the articles. If you have trouble working this out
-you may need to revise Lab 09. 
+Now create a `.html` file with a fetch request and use it to display all of the titles and contents of the articles. If you have trouble working this out
+you may need to revise Lab 09. Hint: when you are making a request to a servlet that is on the same server as the page you are on you only need
+to give the relative path for the servlet. Look in the web-xml file to find the relative path for the Exercise03 servlet. 
 
 The finished `.html` page should look something like this:
 

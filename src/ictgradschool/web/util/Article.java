@@ -1,10 +1,6 @@
 package ictgradschool.web.util;
 
-import org.json.simple.JSONObject;
-
-import java.io.Serializable;
-
-public class Article implements Serializable {
+public class Article {
     private int id;
     private String title;
     private String content;
@@ -42,16 +38,4 @@ public class Article implements Serializable {
         this.content = content;
     }
 
-    public static JSONObject toJson(Article a) {
-        JSONObject jObj = new JSONObject();
-
-        if (a != null) {
-            jObj.put("id", a.getId());
-            jObj.put("title", JSONObject.escape(a.getTitle()));
-            jObj.put("content", JSONObject.escape(a.getContent()));
-            jObj.put("author_id", a.getAuthorId());
-        }
-
-        return jObj;
-    }
 }

@@ -6,9 +6,8 @@
     <title>Title</title>
 </head>
 <body>
-First name: ${firstName}
-<br>
-Last name: ${lastName}
-
+    First name: ${firstName}
+    <br>
+    Last name: ${lastName}
 </body>
 </html>
