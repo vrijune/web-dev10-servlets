@@ -78,14 +78,13 @@ The endpoint will be a servlet that will retrieve and convert a list of `Article
 Steps for creating the endpoint: 
 + In the `Exercise03` class, create a doGet method; this will be similar to the other servlets you have created already in this lab
 + Inside the doGet method, you will need to:
-    - Create a list of article objects through using the ArticleListGenerator class
-    - Create a new empty JSON array
+    - Create a list of article objects through using the ArticleListGenerator class' .getArticleList() method
     - Now use the `JSONResponse.send(...)` method (with appropriate arguments) to complete the endpoint; if you use the method correctly it should complete the response. You should not need to modify the `JSONResponse` class.
     The arguments for the JSONResponse.send() method should be the HTTPServletResponse object and the list of articles ( `List<Article>` )
     
-Now create a `.html` file with a fetch request and use it to display all of the titles and contents of the articles. If you have trouble working this out
+Now create an `.html` file with a fetch request and use it to display all of the titles and contents of the articles. If you have trouble working this out
 you may need to revise Lab 09. Hint: when you are making a request to a servlet that is on the same server as the page you are on you only need
-to give the relative path for the servlet. Look in the web-xml file to find the relative path for the Exercise03 servlet; it is referenced in the URL pattern. 
+to give the relative path for the servlet. In the web-xml file you will need to setup URL mapping for the Exercise03 servlet like you have done for previous activities 
 
 The finished `.html` page should look something like this:
 
@@ -94,8 +93,13 @@ The finished `.html` page should look something like this:
 Exercise 4 &ndash; AJAX Endpoint Individual Article Loader
 ========================
 Now try to create a new endpoint that will load an individual article. This endpoint should receive a request parameter that defines
-the id for an article to load. Use this endpoint to create a page that uses an AJAX request to let the user load one article at a time. The page would look
-something like this:
+the id for an article to load. Use this endpoint to create a page that uses an AJAX request to let the user load one article at a time
+by clicking a next button.
+
+You should add a button that lets the user request a new page that should send a parameter for the next article to be requested.
+You can use the article id as a reference to the current article in order to get the parameter for the next article to load. 
+
+The page would look something like this:
 
 ![](spec/loadNextArticle.PNG)
     
