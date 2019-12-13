@@ -44,7 +44,7 @@ Exercise 2 &ndash; Number Sorter
 For this exercise you will have to repeat a lot of the steps from Exercise 1.
 
 Your task is to create a form that will allow the user to input 4 numbers in any order; you will then use a servlet class to process the fields from the form and sort them into ascending 
-order. The file `WEB-INF/exercise01/exercise02.jsp` is setup to display the request attributes `first`, `second`, `third` and `fourth`. You will have to complete
+order. The file `WEB-INF/exercise02/exercise02.jsp` is setup to display the request attributes `first`, `second`, `third` and `fourth`. You will have to complete
 all steps involved in creating the form and servlet then connecting these to the `.jsp` file. Do not forget all of the steps you had to do in Exercise 1.
 
 The form should look something like this: 
