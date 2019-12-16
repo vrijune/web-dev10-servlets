@@ -9,29 +9,29 @@ When complete, demonstrate your code to your tutor. This must be verified with y
 
 Exercise 1 &ndash; Basic Form Processing
 ==========
-For this exercise you will create a basic form to enter information about an author and display it in the `Exercise01.jsp` file.
+For this exercise you will create a basic form to enter information about an author and display it in the `/WEB-INF/exercise01/exercise01.jsp` file.
 
-First you should look carefully at the example servlet in Example01 and familiarise yourself with how it processes fields from the form and turns them into request attributes. 
+First you should look carefully at the example servlet in the `ictgradschool.web.example01` package and familiarise yourself with how it processes fields from the form and turns them into request attributes. 
 
-You should also look carefully at how the `web.xml` file maps the Example01 `.html` file to the Example01 Servlet. 
+You should also look carefully at how the `web/example01.html` file maps the form submission to the `ictgradschool.web.example01.SimpleServlet` Servlet. 
 
 The form you create should look something like this: 
 
 ![](spec/biographyForm.PNG)
 
-The `exercise01.jsp` file is setup to display specific `request attributes`; have a look at the `.jsp` file to familiarise yourself with the data it should be receiving. 
+The `/WEB-INF/exercise01/exercise01.jsp` file is setup to display specific `request attributes`; have a look at the `.jsp` file to familiarise yourself with the data it should be receiving. 
 
 Follow these steps to complete the task:
 + Create an html file called `exercise01.html` inside the `web` folder
 + In `exercise01.html`, create a form that will allow the user to enter the first name, last name, age, place of birth and biography for an author.
-+ Create a servlet (a class that extends HttpServlet) in a new `exercise01` package that will be able to process the form data; have a look at `Example01`
-+ Complete the `web.xml` file so that it maps a url for the `Exercise01` servlet to the servlet class; look carefully at how `example01` is mapped in the `web.xml` file
-+ Modify the action attribute on the form in `exercise01.html` so it will link to the Servlet; this will mean making it link to the url mapping you created in the previous step
++ Create a servlet (a class that extends HttpServlet) in a new `exercise01` package that will be able to process the form data; have a look at `ictgradschool.web.example01.SimpleServlet` for reference
++ Ensure that your new Servlet has an appropriate urlPattern; again, have a look at `ictgradschool.web.example01.SimpleServlet` for reference
++ Modify the action attribute on the form in `exercise01.html` so it will link to the Servlet; this will mean making it link to the urlPattern you defined in the previous step
 + Inside the servlet you created:
-    - Create variables to store all of the fields from the form and use `request.getParameter("...");` to get them into the servlet as Strings; look at how `Example01` gets the parameters
+    - Create variables to store all of the fields from the form and use `request.getParameter("...");` to get them into the servlet as Strings; look at how `ictgradschool.web.example01.SimpleServlet` gets the parameters
     - Set request attributes that can be used by the `WEB-INF/exercise01/exercise01.jsp` file to display the information that was added in the form; these attributes should be firstName, lastName, age, placeOfBirth, biography. The attributes should match the names that the `.jsp` files are accessing
-    - Create a RequestDispatcher object and use the location of the correct `.jsp` file; review how `Example01` used the RequestDispatcher object
-    - Use the `.forward(...)` method on the RequestDispatcher object and pass in the servlet request and response objects as parameters; review `Example01` if you are unsure
+    - Create a RequestDispatcher object and use the location of the correct `.jsp` file; review how `ictgradschool.web.example01.SimpleServlet` used the RequestDispatcher object
+    - Use the `.forward(...)` method on the RequestDispatcher object and pass in the servlet request and response objects as parameters; review `ictgradschool.web.example01.SimpleServlet` if you are unsure
       
 If everything works correctly the `.jsp` page should display like this:
 
