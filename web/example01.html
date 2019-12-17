@@ -9,12 +9,17 @@
 <h2>Example Form</h2>
 <p>Look at the 'name' attribute on this form and check how the values entered are used in example01.SimpleServlet</p>
 
-<form action="/simpleservlet" method="get">
+<form action="./simpleservlet" method="get">
     First name:<br>
     <input type="text" name="firstname">
     <br>
     Last name:<br>
     <input type="text" name="lastname">
+    <br>
+    Favorute animals:<br>
+    <label><input type="checkbox" name="animals" value="cat"> Cats</label>
+    <label><input type="checkbox" name="animals" value="dog"> Dogs</label>
+    <label><input type="checkbox" name="animals" value="dinosaur"> Dinosaurs</label>
     <br><br>
     <input type="submit" value="Submit">
 </form>

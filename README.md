@@ -83,8 +83,7 @@ Steps for creating the endpoint:
     The arguments for the JSONResponse.send() method should be the HTTPServletResponse object and the list of articles ( `List<Article>` )
     
 Now create an `.html` file with a fetch request and use it to display all of the titles and contents of the articles. If you have trouble working this out
-you may need to revise Lab 09. Hint: when you are making a request to a servlet that is on the same server as the page you are on you only need
-to give the relative path for the servlet. In the web-xml file you will need to setup URL mapping for the Exercise03 servlet like you have done for previous activities 
+you may need to revise Lab 09. Hint: when you are making a request to a servlet that is on the same server as the page you are on you only need to give the relative path for the servlet. Remember to add the appropriate `@WebServlet` annotation to your new servlet.
 
 The finished `.html` page should look something like this:
 
