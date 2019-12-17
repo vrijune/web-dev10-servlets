@@ -9,6 +9,7 @@
 <h2>Example Form</h2>
 <p>Look at the 'name' attribute on this form and check how the values entered are used in example01.SimpleServlet</p>
 
+<!-- ./simpleservlet maps to the example01.SimpleServlet class. -->
 <form action="./simpleservlet" method="get">
     First name:<br>
     <input type="text" name="firstname">
@@ -16,12 +17,16 @@
     Last name:<br>
     <input type="text" name="lastname">
     <br>
-    Favorute animals:<br>
+    Favorite animals:<br>
     <label><input type="checkbox" name="animals" value="cat"> Cats</label>
     <label><input type="checkbox" name="animals" value="dog"> Dogs</label>
     <label><input type="checkbox" name="animals" value="dinosaur"> Dinosaurs</label>
     <br><br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit (get HTML response)">
+
+    <!-- ./jsonservlet maps to the example02.JsonServlet class.
+         Clicking this button will submit the form there instead of ./simpleservlet. -->
+    <input type="submit" formaction="./jsonservlet" value="Submit (get JSON response)">
 </form>
 
 <p>If you click the "Submit" button, the form-data will be sent to a servlet that is mapped as "/example01". Check
