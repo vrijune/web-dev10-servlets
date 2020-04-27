@@ -5,7 +5,6 @@ Begin by forking this repository into your namespace by clicking the ```fork``` 
 
 Explore the files in the project, familiarizing yourself with the content.
 
-When complete, demonstrate your code to your tutor. This must be verified with your tutor by the end of the week.
 
 Exercise 1 &ndash; Basic Form Processing
 ==========
@@ -43,9 +42,7 @@ Exercise 2 &ndash; Number Sorter
 
 For this exercise you will have to repeat a lot of the steps from Exercise 1.
 
-Your task is to create a form that will allow the user to input 4 numbers in any order; you will then use a servlet class to process the fields from the form and sort them into ascending 
-order. The file `WEB-INF/exercise02/exercise02.jsp` is setup to display the request attributes `first`, `second`, `third` and `fourth`. You will have to complete
-all steps involved in creating the form and servlet then connecting these to the `.jsp` file. Do not forget all of the steps you had to do in Exercise 1.
+Your task is to create a form that will allow the user to input 4 numbers in any order; you will then use a servlet class to process the fields from the form and sort them into ascending order. The file `WEB-INF/exercise02/exercise02.jsp` is setup to display the request attributes `first`, `second`, `third` and `fourth`. You will have to complete all steps involved in creating the form and servlet then connecting these to the `.jsp` file. Do not forget all of the steps you had to do in Exercise 1.
 
 The form should look something like this: 
 
@@ -58,51 +55,25 @@ The `.jsp` page should display something like this:
 Exercise 3 &ndash; AJAX Endpoint
 ====================
 
-In this exercise you will create an AJAX endpoint that will supply a front-end AJAX request with a JSON Array of articles. 
+In this exercise you will create an AJAX endpoint that will supply a front-end AJAX request with a JSON string. 
 
-There are some files you will use for this that are already complete. These are in the `util` folder.
+Familiarise yourself the with Lecturer and LecturerDataAccess Java classes within the exercise03 Package.
 
-The files that will be used but NOT need to be modified from the `util` folder are:
-+ `Article` - a class for an Article object that can represent information from the articles data
-+ `ArticleListGenerator` - a class with a single static method called `getArticleList()` that will return a list of articles 
-    -  The`getArticleList()` method accesses a `.json` file that it uses to generate the `.json`. Normally you would access a database and NOT a server-side `.json` file but we are not using a database or database connection in this lab.
-+ `JSONResponse` - this is a class with a single static method that takes a response object and a JSON object as arguments and then sends the response.
+You will use the Lecturer class and the LecturerDataAccess class to create a new Java class that is a servlet that will write a JSON array based on the array returned by the `getLecturersArray()` method within the LecturerDataAccess class. You will then create a `.html` page with the necessary JavaScript code to display the array lecturers in HTML via a fetch request to the servlet.
 
-Have a look at the contents of these files so you have some idea how you can use them.
+This exercise will be similar to the `MoviesEndpoint` in `Example 03`. You should examine `Example 03` carefully and understand how the code works. Note that you will need to use the send method of the `JSONResponse` class from the `util` package. This class uses the ObjectMapper class which is part of a library called Jackson. You will need to add these to future projects if you wish to write JSON in a similar way.
 
-In the next steps you will create an endpoint and an html file that will use that endpoint to display the articles with a frontend AJAX request. This will involve 
-using a fetch request with an async function and await. Just like you have been doing with the `sporadic.nz` endpoints.
+Suggested steps:
++ In the exercise03 package, create a servlet that will send a Lecturer array as a JSON response
++ Create a `.html` file and associated `.js` file to display the content
++ Create the necessary JavaScript code to create a fetch request to retrieve the JSON array of Lecturer objects and parse them to a JavaScript object
++ Complete the JavaScript code so that it creates the necessary HTML elements to display the data within the page 
 
-The endpoint will be a servlet that will retrieve and convert a list of `Article` Java objects and convert it into a JSON array then use the `JSONResponse` class to complete the response.  
+When completed the data should display in HTML something like this: 
 
-Steps for creating the endpoint: 
-+ In the `Exercise03` class, create a doGet method; this will be similar to the other servlets you have created already in this lab
-+ Inside the doGet method, you will need to:
-    - Create a list of article objects through using the ArticleListGenerator class' .getArticleList() method
-    - Now use the `JSONResponse.send(...)` method (with appropriate arguments) to complete the endpoint; if you use the method correctly it should complete the response. You should not need to modify the `JSONResponse` class.
-    The arguments for the JSONResponse.send() method should be the HTTPServletResponse object and the list of articles ( `List<Article>` )
-    
-Now create an `.html` file with a fetch request and use it to display all of the titles and contents of the articles. If you have trouble working this out
-you may need to revise Lab 09. Hint: when you are making a request to a servlet that is on the same server as the page you are on you only need to give the relative path for the servlet. Remember to add the appropriate `@WebServlet` annotation to your new servlet.
+![](spec/listOfLecturers.PNG)      
 
-The finished `.html` page should look something like this:
 
-![](spec/EndPointArticles.PNG)
-
-Exercise 4 &ndash; AJAX Endpoint Individual Article Loader
-========================
-Now try to create a new endpoint that will load an individual article. This endpoint should receive a request parameter that defines
-the id for an article to load. Use this endpoint to create a page that uses an AJAX request to let the user load one article at a time
-by clicking a next button.
-
-You should add a button that lets the user request a new page that should send a parameter for the next article to be requested.
-You can use the article id as a reference to the current article in order to get the parameter for the next article to load. 
-
-The page would look something like this:
-
-![](spec/loadNextArticle.PNG)
-    
-    
 
 
 
