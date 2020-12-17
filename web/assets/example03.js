@@ -17,7 +17,7 @@ window.addEventListener("load",function(){
     }
 
     async function loadMovies(){
-        let responseObject = await fetch("/moviesendpoint");
+        let responseObject = await fetch("./moviesendpoint");
         let movies = await responseObject.json();
 
         displayMovies(movies);
